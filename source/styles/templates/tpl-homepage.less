@@ -1,0 +1,98 @@
+/*
+ * tpl-homepage.less
+ * [ Contains all LESS code for the Homepage Template ]
+ *
+ * @project:  SN-FE-QS
+ * @date:      xxxx-xx-xx
+ * @author:   name, name@sapient.com
+ * @licensor: SAPIENNITRO
+ */
+
+//------------------------------------- VARIABLES
+
+//------------------------------------- VARIABLES END
+
+//------------------------------------- MEDIA ALL @media @all Viewport L & M & S & XS (General Rules)
+.tpl-homepage {
+
+    & nav {
+        padding: 15px 0;
+    }
+
+    & .navigation-list {
+        padding: 15px 0;
+        list-style: none;
+    }
+
+    & .navigation-list__item__link {
+        display: inline-block;
+
+        &::before {
+            .icon-arrow;
+
+            display: inline-block;
+            content: '';
+            width: 10px;
+            height: 10px;
+            background-size: contain;
+        }
+
+        &:hover::before {
+            .icon-arrow-red;
+        }
+    }
+
+}
+//------------------------------------- MEDIA ALL END
+
+//------------------------------------- MEDIA MOBILE @media @mobile Viewport S (Mobile General)
+@media @mobile {}
+//------------------------------------- MEDIA MOBILE END
+
+//------------------------------------- MEDIA MOBILE SMALL @media @mobile-small Viewport XS (Mobile Small General)
+@media @mobile-small {}
+//------------------------------------- MEDIA MOBILE SMALL END
+
+//------------------------------------- MEDIA MOBILE PORTRAIT @media @mobile-portrait Viewport S (Mobile Portrait)
+@media @mobile-portrait {}
+//------------------------------------- MEDIA MOBILE PORTRAIT END
+
+//------------------------------------- MEDIA MOBILE LANDSCAPE @media @mobile-landscape Viewport S (Mobile Landscape)
+@media @mobile-landscape {}
+//------------------------------------- MEDIA MOBILE LANDSCAPE END
+
+//------------------------------------- MEDIA TABLET @media @tablet Viewport M (Tablet General)
+@media @tablet {}
+//------------------------------------- MEDIA TABLET END
+
+//------------------------------------- MEDIA TABLET PORTRAIT @media @tablet-portrait Viewport M (Tablet Portrait)
+@media @tablet-portrait {}
+//------------------------------------- MEDIA TABLET PORTRAIT END
+
+//------------------------------------- MEDIA TABLET LANDSCAPE @media @tablet-landscape Viewport M (Tablet Landscape)
+@media @tablet-landscape {}
+//------------------------------------- MEDIA TABLET LANDSCAPE END
+
+//------------------------------------- MEDIA MOBLET @media @moblet Viewport M & S & XS (Tablet & Mobile & Mobile Small General)
+@media @moblet {}
+//------------------------------------- MEDIA MOBLET END
+
+//------------------------------------- MEDIA MOBLET PORTRAIT @media @moblet-portrait Viewport M & S & XS (Tablet & Mobile & Mobile Small Portrait)
+@media @moblet-portrait {}
+//------------------------------------- MEDIA MOBLET PORTRAIT END
+
+//------------------------------------- MEDIA DESKTOP @media @desktop Viewport L (Desktop)
+@media @desktop {}
+//------------------------------------- MEDIA DESKTOP END
+
+//------------------------------------- MEDIA TABDESK @media @tabdesk Viewport L & M (Desktop & Tablet)
+@media @tabdesk {}
+//------------------------------------- MEDIA DESKTOP END
+
+//------------------------------------- MEDIA RETINA @media @moblet-retina Viewport M & S & XS (Tablet & Mobile & Mobile Small Retina)
+@media @retina {}
+//------------------------------------- MEDIA RETINA END
+
+//------------------------------------- IE8 SPECIFIC RULES class .ie8 (Internet Explorer 8 Rules)
+.ie8 {} //------------------------------------- IE8 SPECIFIC RULES END
+

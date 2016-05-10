@@ -1,0 +1,195 @@
+//
+// MIXINS
+// --------------------------------------------------
+
+// Make an element invisible for users
+.invisible () {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+
+// Aspect Ratio mixin; usage: .aspect-ratio(16,9)
+.aspect-ratio (@width:1, @height:1, @fixedWidth: true, @fixedHeight: true, @pos: 'top') {
+    display: block;
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+        content: "";
+        display: block;
+        padding-top: ((100/@width) * @height) + 0%;
+    }
+
+    & when (@fixedWidth = false) {
+
+        & when (@fixedHeight = false) {
+
+            > a,
+            > div,
+            > img,
+            > svg,
+            > video {
+                position: absolute;
+                left: 0;
+            }
+
+            & when (@pos = 'top') {
+
+                > a,
+                > div,
+                > img,
+                > svg,
+                > video {
+                    top: 0;
+                }
+            }
+
+            & when (@pos = 'bottom') {
+
+                > a,
+                > div,
+                > img,
+                > svg,
+                > video {
+                    bottom: 0;
+                }
+            }
+        }
+    }
+
+    & when (@fixedHeight = false) {
+
+        & when (@fixedWidth = false) {
+
+            > a,
+            > div,
+            > img,
+            > svg,
+            > video {
+                position: absolute;
+                left: 0;
+            }
+
+            & when (@pos = 'top') {
+
+                > a,
+                > div,
+                > img,
+                > svg,
+                > video {
+                    top: 0;
+                }
+            }
+
+            & when (@pos = 'bottom') {
+
+                > a,
+                > div,
+                > img,
+                > svg,
+                > video {
+                    bottom: 0;
+                }
+            }
+        }
+    }
+
+    & when (@fixedWidth = true) {
+
+        & when (@fixedHeight = true) {
+
+            > a,
+            > div,
+            > img,
+            > svg,
+            > video {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        & when (@fixedHeight = false) {
+
+            > a,
+            > div,
+            > img,
+            > svg,
+            > video {
+                position: absolute;
+                right: 0;
+                left: 0;
+                width: 100%;
+            }
+
+            & when (@pos = 'top') {
+
+                > a,
+                > div,
+                > img,
+                > svg,
+                > video {
+                    top: 0;
+                }
+            }
+
+            & when (@pos = 'bottom') {
+
+                > a,
+                > div,
+                > img,
+                > svg,
+                > video {
+                    bottom: 0;
+                }
+            }
+        }
+    }
+
+    & when (@fixedHeight = true) {
+
+        & when (@fixedWidth = true) {
+
+            > a,
+            > div,
+            > img,
+            > svg,
+            > video {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        & when (@fixedWidth = false) {
+
+            > a,
+            > div,
+            > img,
+            > svg,
+            > video {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                height: 100%;
+            }
+        }
+    }
+}
+
+// Truncate long one line text; usage: .text-truncate()
+.text-truncate () {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

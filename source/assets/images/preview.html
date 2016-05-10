@@ -1,0 +1,102 @@
+<!doctype HTML>
+<html>
+<head>
+    <title>Icons Preview</title>
+    <style>
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        padding: 0 10px;
+        background: #d3d3d3;
+    }
+
+    pre,
+    code {
+        margin: 0;
+        white-space: inherit;
+    }
+
+    pre {
+        padding: 0 0 15px 0;
+    }
+
+    code {
+        padding: 2px 5px;
+        color: #2d4f73;
+        font-family: menlo, monospace;
+        font-size: 0.8em;
+        background: #aabccf;
+    }
+
+    .icon-preview__headline {
+        padding: 20px 0 20px 25px;
+        margin: 0;
+        font-family: sans-serif;
+    }
+
+    .item-list {
+        display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+        display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+        display: -ms-flexbox;      /* TWEENER - IE 10 */
+        display: -webkit-flex;     /* NEW - Chrome */
+        display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        -webkit-flex-wrap: 2;
+        -moz-flex-wrap: 2;
+        -ms-flex-wrap: 2;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 0;
+    }
+
+    .item-list__element {
+        padding: 0 25px;
+        margin: 0 0 25px 0;
+        list-style: none;
+        border-right: 1px solid #aaa;
+    }
+
+    </style>
+    <script>
+    /*! grunt-grunticon Stylesheet Loader - v2.1.2 | https://github.com/filamentgroup/grunticon | (c) 2015 Scott Jehl, Filament Group, Inc. | MIT license. */
+
+(function(e){function t(t,n,r,o){"use strict";function a(){for(var e,n=0;u.length>n;n++)u[n].href&&u[n].href.indexOf(t)>-1&&(e=!0);e?i.media=r||"all":setTimeout(a)}var i=e.document.createElement("link"),l=n||e.document.getElementsByTagName("script")[0],u=e.document.styleSheets;return i.rel="stylesheet",i.href=t,i.media="only x",i.onload=o||null,l.parentNode.insertBefore(i,l),a(),i}var n=function(r,o){"use strict";if(r&&3===r.length){var a=e.navigator,i=e.Image,l=!(!document.createElementNS||!document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect||!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1")||e.opera&&-1===a.userAgent.indexOf("Chrome")||-1!==a.userAgent.indexOf("Series40")),u=new i;u.onerror=function(){n.method="png",n.href=r[2],t(r[2])},u.onload=function(){var e=1===u.width&&1===u.height,a=r[e&&l?0:e?1:2];n.method=e&&l?"svg":e?"datapng":"png",n.href=a,t(a,null,null,o)},u.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==",document.documentElement.className+=" grunticon"}};n.loadCSS=t,e.grunticon=n})(this);
+    grunticon(["//localhost:9000/styles/icons.svg.css", "//localhost:9000/styles/icons.png.css", "//localhost:9000/styles/icons.oldie.css"]);
+    </script>
+    <noscript><link href="//localhost:9000/styles/icons.oldie.css" rel="stylesheet"></noscript>
+</head>
+<body>
+    <h1 class="icon-preview__headline">SN FE Quickstarter Icon Preview</h1>
+
+    <ul class="item-list">
+
+    
+        
+
+            <li class="item-list__element">
+                <pre>
+                    <code>.icon-arrow-red</code>
+                </pre>
+                <div class="icon-arrow-red" style="width: 42.555px; height: 74.653px;" ></div>
+            </li>
+
+        
+    
+        
+
+            <li class="item-list__element">
+                <pre>
+                    <code>.icon-arrow</code>
+                </pre>
+                <div class="icon-arrow" style="width: 42.555px; height: 74.653px;" ></div>
+            </li>
+
+        
+    
+
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1'>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>{{title}} | {{site.title}}</title>
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+    <!-- build:js({source, dist}) js/vendor.js -->
+    <script src="js/bower/jquery/dist/jquery.js"></script>
+    <script src="js/bower/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="js/bower/handlebars/handlebars.js"></script>
+    <script src="js/bower/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+</head>
+<body>
+    {{> body }}
+    {{> common-js}}
+</body>
+</html>

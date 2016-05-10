@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>SN FE Quickstarter Documentation Index</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cerulean.css">
+
+</head>
+
+<body>
+<div class="container-fluid">
+	<div class="navbar navbar-fixed-top navbar-inverse">
+		<div class="navbar-inner">
+			<a class="brand" href="index.html">SN FE Quickstarter Documentation</a>
+			<ul class="nav">
+				
+				<li class="dropdown">
+					<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="snqs.html">snqs</a>
+						</li>
+						
+						<li>
+							<a href="snqs.Main.html">snqs.Main</a>
+						</li>
+						
+						<li>
+							<a href="snqs.SampleModule.html">snqs.SampleModule</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+
+		
+		<div class="span8">
+			
+				<div id="main">
+					
+
+
+	
+	<span class="page-title">Index</span>
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+    <section class="readme-section">
+        <article><h2>Preliminaries</h2>
+<ol>
+<li>Install <a href="http://git-scm.com">git</a> as it is a bower dependency</li>
+<li>Install <a href="http://nodejs.org">nodeJS</a> incl. node package manager (npm)</li>
+<li>Install <a href="http://gruntjs.com">Grunt</a> Command Line Interface (grunt cli) globally<ul>
+<li><strong><em>$ sudo npm install -g grunt-cli</em></strong></li>
+</ul>
+</li>
+<li>Install <a href="http://bower.io">bower</a> globally<ul>
+<li><strong><em>$ sudo npm install -g bower</em></strong></li>
+</ul>
+</li>
+<li>Install bower dependencies<ul>
+<li><strong><em>$ bower install</em></strong></li>
+<li>If bower gives you GIT issues reconfigure git <a href="http://stackoverflow.com/questions/21789683/howto-fix-bower-ecmderr#answer-21790275">(details)</a>:  </li>
+<li>$ git config --global url.&quot;<a href="https://&quot;.insteadOf">https://&quot;.insteadOf</a> git://</li>
+</ul>
+</li>
+<li>Install node modules within the project location<ul>
+<li><strong><em>$ sudo npm install</em></strong> </li>
+</ul>
+</li>
+</ol>
+<h2><a name="user-content-technology-stack"></a>Technology Stack</h2>
+<p><a href="http://nodejs.org">NodeJS</a> is used as the underyling core technology, that empowers the used tool chain.<br><a href="http://bower.io">Bower</a> is used for dependency management to handle vendor libraries / frameworks.<br><a href="http://gruntjs.com">Grunt</a> is used for FE automation tasks, e.g. building static HTML pages, linting the code, creating inline SVG and more.</p>
+<h2>Preinstalled dependencies (via bower)</h2>
+<ul>
+<li>handlebars v2.0.0 (<em>source/js/bower/handlebars</em>)</li>
+<li>modernizr v2.8.3 (<em>source/js/bower/modernizr</em>)</li>
+<li>jquery v1.11.1 (<em>source/js/bower/jquery</em>)</li>
+<li>bootstrap v3.3.1 (<em>source/js/bower/bootstrap</em>)</li>
+</ul>
+<p>The dependencies can be adjusted via the command line or directly in the related <em>bower.json</em> file.</p>
+<h2><a name="user-content-grunt-commands"></a>Grunt Commands</h2>
+<ol>
+<li><strong><em>$ grunt</em></strong> starts a node webserver with live reload for development purposes on <a href="http://localhost:9001/">http://localhost:9001/</a></li>
+<li><strong><em>$ grunt dist</em></strong> creates a production ready version of the project in the dist folder. this version can be used for client demos, internal feedback...</li>
+<li><strong><em>$ grunt delivery</em></strong> runs the distribution task and puts all of the output in a ZIP archive with an incremental version number</li>
+<li><strong><em>$ grunt karma:unit</em></strong> fire up karma test runner to execute unit tests </li>
+</ol>
+<h2>Architecture</h2>
+<h3>Grunt</h3>
+<p>The FE Quickstarter is driven by <a href="http://gruntjs.com">Grunt</a> to have a running development environment in place in a very short amount of time.
+The Grunt setup follows a modularized approach to keep it maintainable and organized.
+All tasks are located in <em>grunt/tasks</em>. All tasks (node modules as well as custom tasks) are automatically loaded by GRUNT.<br>All task options are located in <em>grunt/options</em>. The option files are named like the corresponding tasks. The options are automatically loaded by GRUNT.
+More details about the Grunt tasks in use can be found <a href="#user-content-grunt-tasks">here</a>.</p>
+<p>Interesting reads<br>- <a href="http://thenittygritty.co/shared-grunt-configuration">http://thenittygritty.co/shared-grunt-configuration</a><br>- <a href="http://www.thomasboyt.com/2013/09/01/maintainable-grunt.html">http://www.thomasboyt.com/2013/09/01/maintainable-grunt.html</a> </p>
+<h3>Assemble</h3>
+<p><a href="http://assemble.io">Assemble</a> is a static site generator for Node.js, Grunt.js, and Yeoman, using the <a href="http://handlebarsjs.com">Handlebars</a> template engine. The FE Quickstarter relies on Assemble to achieve a modularized setup. All modules / components are created as partials. Like &quot;includes&quot;, partials are reusable fragments of code that can be included in a page and rendered. Mock up data can easily be incorporated as context for the partials by using Assemble's built in data provider mechanism. Make sure to check out the <a href="http://assemble.io/docs/index.html">documentation</a>.</p>
+<h3>Bootstrap</h3>
+<p><a href="http://getbootstrap.com">Bootstrap</a> is included as a hard dependency to have a fast and proven responsive framework as a base layer.<br>Nevertheless if it isn't required, just remove the dependency from the <em>bower.json</em> file, before installing. Make sure to remove BS import and includes from <em>/source/styles/main.less</em> and <em>/source/layouts/default.hbs</em>.</p>
+<h3>CSS</h3>
+<p>In this version of the FE QS <a href="http://lesscss.org">Less</a> is used as a CSS pre-processor. Less was chosen over <a href="http://sass-lang.com">SASS</a> to get rid of the additional dependencies to <a href="https://www.ruby-lang.org/en/">Ruby</a>.<br>More details on CSS usage within the <a href="#user-content-folder-structure">folder structure</a> / functionality section.</p>
+<h3>JavaScript</h3>
+<p>Module related JavaScript is placed together with it's module.
+Currently there are no integrated module loaders like requireJS or Browserify.
+Custom Javascript should follow the <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#revealingmodulepatternjavascript">Revealing Module Pattern</a> as can be found in the Sample Module <em>/sampleModule/sampleModule.js</em>. Of course other JS Design patterns can be used if required.
+More details on JS usage within the <a href="#user-content-folder-structure">folder structure</a> / functionality section.</p>
+<h3>SVG Integration</h3>
+<p><a href="https://github.com/filamentgroup/grunticon">Grunticon</a> is used to produce embedded SVG / PNG URLs as well as fallback PNGs for older browsers. The original SVG files should be provided in the required dimensions, as the fallback PNGs will adopt these. The processing of monochrome as well as polychrome SVGs is supported. Color variations can automatically be created, if the SVG filenames are edited in the following way, e.g. :
+<em>filename.colors-grey-red.svg</em>
+The specific color values can be added and modified by editing the colors property within the corresponding Grunt task in this location <em>/grunt/options/grunticon.js</em></p>
+<h3>TDD approach</h3>
+<p><a href="http://karma-runner.github.io/0.12/index.html">Karma</a> is used as the Test Runner with <a href="http://jasmine.github.io">Jasmine</a> set up as the testing framework. It is included as a Grunt task and can be triggered by using the command line.
+Type <em>$ grunt karma:unit</em> to fire it up.
+All unit tests have to be located in <em>test/spec</em>. Each unit testing file has to be marked with the extension &quot;*.spec.js&quot; and has to be named like the component that should be tested, e.g. &quot;slider.spec.js&quot; for the &quot;slider.js&quot; component.
+The most important part for improving the overall code quality is &quot;WRITE TESTS FIRST!&quot;. This means you will start with writing tests that fail before you actually write a line of &quot;real&quot; code.
+Have a look <a href="http://www.youtube.com/watch?v=OzjogCFO4Zo">here</a> to get the concept of TDD.
+A more detailed explanation as well as examples will follow.</p>
+<h3>JS Doc</h3>
+<p><a href="http://devnull.absolventa.de/2014/03/25/jsdoc-and-the-revealing-module-pattern/">http://devnull.absolventa.de/2014/03/25/jsdoc-and-the-revealing-module-pattern/</a></p>
+<h3><a name="user-content-folder-structure"></a>Folder structure</h3>
+<p>All development is done within the <strong><em>source</em></strong> and <strong><em>test</em></strong> folders.<br>The function of the subfolders within <strong><em>source</em></strong> are as follows:</p>
+<p><strong><em>fonts</em></strong><br>Location for the Web Fonts</p>
+<p><strong><em>images</em></strong><br>Location for image assets. Also SVG files like logos etc., that are not related to modules are stored within a subfolder <em>images/svg</em>. Check out the <a href="#user-content-svg-integration">SVG Integration</a> section for further details. All images will automatically be provided compressed and optimized when running the <em>Distribution</em> or <em>Delivery</em> Grunt tasks (see <a href="#user-content-grunt-commands"><em>Grunt Commands</em></a>).</p>
+<p><strong><em>js</em></strong><br>Vendor libraries / frameworks are located here.<br><a href="#user-content-technology-stack">Bower</a> creates a folder <em>js/vendor</em> to install all specified dependencies. Manually downloaded libs should also be placed here.<br>If JS is required, that isn't related to a specific module, it is placed within this general <em>js</em> folder. Details on how to create and place module related JS can be found in the modules section.<br>There's also a Grunt task for creating pre-compiled templates of all Handlebars partials. This task creates a folder <em>js/templates</em> together with the file <em>templates.combined.js</em>. By integrating this file in your project you have access to all created partials. If required this can be used to e.g. dynamically render a navigation and fill it with data on client side. The included partials (if not all are required) can be specified in the related Grunt option <em>/grunt/options/handlebars.js</em></p>
+<p><strong><em>layouts</em></strong><br>This folder holds the Assemble layouts. Layouts are used for &quot;wrapping&quot; the content of individual HTML pages with common elements, such as the &quot;head&quot; and &quot;footer&quot; sections, which usually contain necessities such as &quot;link&quot; and &quot;script&quot; tags. Different layouts can be specified and assigned to pages. The content (pages) will replace the <em>{{&gt; body}}</em> placeholder when rendered. For further details have a look at the Assemble <a href="http://assemble.io/docs/Layouts.html">documentation</a>.</p>
+<p><strong><em>modules</em></strong><br>All modules / components of a solution are created within this folder. Every module follows the same pattern.<br>Folder structure, e.g. &quot;Image Gallery&quot;:
+- <strong><em>modules/image-gallery</em></strong> (root folder for HTML (HBS) / JS / CSS (Less))
+- <strong><em>modules/image-gallery/js</em></strong> (module related JS)
+- <strong><em>modules/image-gallery/less</em></strong> (module related CSS (LESS))
+- <strong><em>modules/image-gallery/assets</em></strong> (module related images)
+- <strong><em>modules/image-gallery/assets/svg</em></strong> (module related icons)
+- <strong><em>modules/image-gallery/data</em></strong>   (module related mockup data)</p>
+<p>Usage of mock up data for [Grunt assemble](<a href="https://github.com/assemble/assemble">https://github.com/assemble/assemble</a>. Data may be formatted in JSON, YAML, YAML front matter, or passed directly as an object.<br>Example:<br>If the <em>data</em> folder holds a file called sampleData.json, Assemble will treat it like a JSON object. A partial can get this object &quot;sampleData&quot; as context and access the data within it's definition.</p>
+<p><em>Set up the data object sampleData.json</em></p>
+<pre><code>{
+    &quot;content&quot;: &quot;some sample data&quot;
+}</code></pre>
+<p><em>Provide the data object as context to a partial</em></p>
+<pre><code>{{&gt; sample-module sampleData}}</code></pre>
+<p><em>Access the data within the partial sample-module.hbs</em></p>
+<pre><code>&lt;div class=&quot;sample-module&quot;&gt;
+    {{ this.content }}
+&lt;/div&gt;</code></pre>
+<p><em>Rendering of the partial</em></p>
+<pre><code>&lt;div class=&quot;sample-module&quot;&gt;
+    some sample data
+&lt;/div&gt;</code></pre>
+<p><strong><em>pages</em></strong><br>This folder holds the Assemble pages. All files located here are rendered as static HTML pages to the location, specified in the related Grunt option <em>/grunt/options/assemble.js</em>. Also check out the <a href="http://assemble.io/docs/Pages.html">documentation</a>.<br>Example:<br>If a file called <em>index.hbs</em> is created within the <em>pages</em> folder, Assemble will render it to the specified location as <em>index.html</em>. The rendered HTML page contains all included partials and gets the <em>default.hbs</em> layout as wrapper, if not specified otherwise.  </p>
+<p><em>Create a new file index.hbs</em></p>
+<pre><code>---
+{
+    [&quot;layout&quot;   : &quot;otherLayout.hbs&quot;],
+    &quot;title&quot;    : &quot;Project title&quot;,
+    &quot;site&quot;     : {
+        &quot;title&quot; : &quot;Page title&quot;
+    }
+}
+---
+&lt;div class=&quot;container tpl-homepage&quot;&gt;
+    &lt;section&gt;
+        &lt;h1&gt;Sapient Frontend Quick Starter&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;h2 class=&quot;navigation-headline&quot;&gt;Navigation&lt;/h2&gt;
+            &lt;ul class=&quot;navigation-list&quot;&gt;
+                &lt;li class=&quot;navigation-list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; target=&quot;_blank&quot; class=&quot;navigation-list__item__link&quot;&gt;Navigation List Item 1&lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/section&gt;
+&lt;/div&gt;</code></pre>
+<p><em>Assemble searches the layout folder and applies the required layout (default.hbs if not specified otherwise). {{&gt; body}} is replaced by the page content</em></p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1'&gt;
+    &lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot; /&gt;
+    &lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black&quot;&gt;
+    &lt;title&gt;{{title}} | {{site.title}}&lt;/title&gt;
+    &lt;link rel=&quot;shortcut icon&quot; href=&quot;/images/favicon.ico&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;styles/main.css&quot;&gt;
+    &lt;script src=&quot;js/vendor/jquery/dist/jquery.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    {{&gt; body }}
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p><em>Rendered index.html</em></p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1'&gt;
+    &lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot; /&gt;
+    &lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black&quot;&gt;
+    &lt;title&gt;SN-FE-QS | Index&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;styles/main.css&quot;&gt;
+    &lt;script src=&quot;js/vendor/jquery/dist/jquery.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;container tpl-homepage&quot;&gt;
+    &lt;section&gt;
+        &lt;h1&gt;Sapient Frontend Quick Starter&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;h2 class=&quot;navigation-headline&quot;&gt;Navigation&lt;/h2&gt;
+            &lt;ul class=&quot;navigation-list&quot;&gt;
+                &lt;li class=&quot;navigation-list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; target=&quot;_blank&quot; class=&quot;navigation-list__item__link&quot;&gt;Navigation List Item 1&lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/section&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p><strong><em>styles</em></strong><br>tbc</p>
+<h2><a name="user-content-grunt-tasks" href=""></a>Grunt Tasks</h2>
+<p>tbd</p>
+<h2><a name="user-content-npm" href=""></a>Useful NPM installs</h2>
+<ul>
+<li><a href="https://www.npmjs.com/package/npm-check-updates">npm-check-updates</a>
+tbc</li>
+</ul></article>
+    </section>
+
+
+
+
+
+
+
+				</div>
+
+				<div class="clearfix"></div>
+				<footer>
+					
+					
+		<span class="copyright">
+		DocStrap Copyright © 2012-2014 The contributors to the JSDoc3 and DocStrap projects.
+		</span>
+					<br />
+					
+		<span class="jsdoc-message">
+		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a>
+		on Mon May 9th 2016 using the <a
+			href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
+		</span>
+				</footer>
+			</div>
+
+			
+			<div class="span3">
+				<div id="toc"></div>
+			</div>
+			
+			<br clear="both">
+		</div>
+
+	</div>
+	<!--<script src="scripts/sunlight.js"></script>-->
+	<script src="scripts/docstrap.lib.js"></script>
+	<script src="scripts/bootstrap-dropdown.js"></script>
+	<script src="scripts/toc.js"></script>
+
+	<script>
+		$( function () {
+			$( "[id*='$']" ).each( function () {
+				var $this = $( this );
+
+				$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+			} );
+
+			$( "#toc" ).toc( {
+				anchorName  : function ( i, heading, prefix ) {
+					return $( heading ).attr( "id" ) || ( prefix + i );
+				},
+				selectors   : "h1,h2,h3,h4",
+				showAndHide : false,
+				scrollTo    : "100px"
+			} );
+
+			$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+			$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+			$( '.dropdown-toggle' ).dropdown();
+//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+			$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+				var $this = $( this );
+
+				var example = $this.find( "code" );
+				exampleText = example.html();
+				var lang = /{@lang (.*?)}/.exec( exampleText );
+				if ( lang && lang[1] ) {
+					exampleText = exampleText.replace( lang[0], "" );
+					example.html( exampleText );
+					lang = lang[1];
+				} else {
+					lang = "javascript";
+				}
+
+				if ( lang ) {
+
+					$this
+						.addClass( "sunlight-highlight-" + lang )
+						.addClass( "linenums" )
+						.html( example.html() );
+
+				}
+			} );
+
+			Sunlight.highlightAll( {
+				lineNumbers : true,
+				showMenu : true,
+				enableDoclinks : true
+			} );
+		} );
+	 </script>
+
+
+
+	<!--Navigation and Symbol Display-->
+	
+
+
+	<!--Google Analytics-->
+	
+
+</body>
+</html>

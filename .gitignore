@@ -4,4 +4,4 @@ node_modules
 .tmp
 source/js/bower
 .sass-cache
-
+dist

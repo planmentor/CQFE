@@ -11,6 +11,7 @@
     - $ git config --global url."https://".insteadOf git://
 6. Install node modules within the project location
     - __*$ sudo npm install*__ 
+7. - [Compass](http://compass-style.org/) (`gem install compass`) 
 
 ## <a name="user-content-technology-stack"></a>Technology Stack
 [NodeJS](http://nodejs.org) is used as the underyling core technology, that empowers the used tool chain.  

@@ -1,0 +1,9 @@
+@import "generic/icons-svg.css";
+
+body{
+	background-color: yellow;
+}
+
+@import "bootstrap/bootstrap";
+@import "generic/variable";
+@import "../modules/sample-module/sass/sample-module";

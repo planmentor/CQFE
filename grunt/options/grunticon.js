@@ -4,9 +4,9 @@ module.exports = {
         // optional grunticon config properties
 
         // CSS filenames
-        datasvgcss: '../../styles/generic/icons-svg.css',
-        datapngcss: '../../styles/generic/icons-png.css',
-        urlpngcss:  '../../styles/generic/icons-oldie.css',
+        datasvgcss: '../../styles/icons-svg.css',
+        datapngcss: '../../styles/icons-png.css',
+        urlpngcss:  '../../styles/icons-oldie.css',
 
         // preview HTML filename
         previewhtml: 'preview.html',

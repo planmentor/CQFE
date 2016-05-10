@@ -2,7 +2,7 @@
 module.exports = {
     options: {
         paths: [
-            '<%= config.src_bower %>/bootstrap/less',
+            '<%= config.src_bower %>/bootstrap-sass/stylesheets',
             '<%= config.src_modules %>'
         ]
     },
@@ -12,7 +12,7 @@ module.exports = {
             rootpath: '../'
         },
         files: {
-            '<%= config.dist %>/styles/main.css': '<%= config.src %>/styles/main.less'
+            '<%= config.dist %>/styles/main.css': '<%= config.src %>/styles/main.scss'
         }
     },
     tmp: {

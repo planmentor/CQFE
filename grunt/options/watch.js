@@ -25,18 +25,18 @@ module.exports = {
             'jshint'
         ]
     },
-    less: {
+    sass: {
         options: {
             livereload: false,
             event: [ 'changed', 'added', 'deleted' ]
         },
         files: [
-            '<%= config.src %>/styles/**/*.less',
-            '<%= config.src_modules %>/**/*.less'
+            '<%= config.src %>/styles/**/*.scss',
+            '<%= config.src_modules %>/**/*.scss'
         ],
         tasks: [
-            'less:tmp',
-            'less:styleguide'
+            'sass:tmp',
+            'sass:styleguide'
         ]
     },
     icons: {
@@ -52,7 +52,7 @@ module.exports = {
             'svgmin',
             'copy:modulesvg',
             'grunticon:tmp',
-            'less:tmp'
+            'sass:tmp'
         ]
     },
     styleguide: {
@@ -65,7 +65,7 @@ module.exports = {
             '<%= config.styleguide %>/**/*.js'
         ],
         tasks: [
-            'less:styleguide',
+            'sass:styleguide',
             'styledown:tmp'
         ]
     },
